@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .group {
+            margin-bottom: 20px;
+        }
+
+        form {
+            width: 700px;
+            height: 500px;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            background-color: white;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        label {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        input,select {
+            width: 80%;
+            padding: 4px;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <div class="group">
+            <label for="name">Name:-</label>
+            <input type="text" name="name" id="name" placeholder="Your Name" value="AKshay " required>
+        </div>
+        <div class="group">
+            <label for="email">Email:-</label>
+            <input type="email" name="email" id="email" autofocus placeholder="Your Email">
+        </div>
+        <div class="group">
+            <label for="password">Password:-</label>
+            <input type="password" name="password" id="password" placeholder="Your Password">
+        </div>
+        <div class="group">
+            <label for="">Gender</label>
+            <input style="width: 50px;" name="gender" type="radio">
+            <label for="">Male</label>
+            <input style="width: 50px;" name="gender" type="radio">
+            <label for="">Female</label>
+
+        </div>
+        
+        <div class="group">
+            <label for="">City</label>
+            <select name="" id="">
+                <option value="">Kota</option>
+                <option value="">Jaipur</option>
+                <option value="">Ajmer</option>
+                <option value="">Sikar</option>
+            </select>
+           
+        </div>
+
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: black;
+        }
+
+        .parent {
+            width: 350px;
+            height: 350px;
+            margin: 20px auto;
+            position: relative;
+            box-shadow: 4px 8px 24px gray;
+            overflow: hidden;
+
+        }
+
+        .overlay {
+            width: 100%;
+            padding: 20px;
+            background-color: white;
+            position: absolute;
+            bottom: -200px;
+            right: 100%;
+            background-color: white;
+            box-shadow: 2px 3px 2px 4px red;
+            transition: 0.6s;
+        }
+
+        .parent:hover .overlay {
+            bottom: 0;
+            right: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <img width="100%" height="100%" src="https://image.tmdb.org/t/p/w1280/tbJ3RkA2s6X5qrBzrYHYTxvDBui.jpg" alt="">
+
+        <div class="overlay">
+            <h4>Rust</h4>
+            <p>
+                <b> Overview:</b>
+                Infamous outlaw Harland Rust breaks his estranged grandson Lucas out of prison, after Lucas is convicted
+                to hang for an accidental murder. The two must outrun legendary U.S Marshal Wood Helm and bounty hunter
+                Fenton
+            </p>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

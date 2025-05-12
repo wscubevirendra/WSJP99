@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: "Inter", sans-serif;
+
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+header {
+    width: 100%;
+    height: 64px;
+    padding: 0px 32px;
+    box-shadow: 0 1px 12px rgba(29, 29, 29, .102);
+    background-color: #fff;
+    border-bottom: 1px solid #e5e5e5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 222;
+    display: flex;
+}
+
+.logo {
+    width: 56px;
+    height: 56px;
+    margin-right: 32px;
+}
+
+
+header ul {
+    display: flex;
+}
+
+.bus_ticket {
+    width: 106px;
+    height: 64px;
+    /* border: 2px solid red; */
+    margin-right: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #d63941;
+    font-size: 11px;
+    letter-spacing: .05px;
+    line-height: 16px;
+    font-weight: 500;
+    gap: 4px;
+}
+
+
+.train_ticket {
+    width: 106px;
+    height: 64px;
+    /* border: 2px solid red; */
+    margin-right: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #d63941;
+    font-size: 11px;
+    letter-spacing: .05px;
+    line-height: 16px;
+    font-weight: 500;
+    filter: grayscale(1) brightness(0);
+    gap: 4px;
+
+}
+
+.train_ticket:hover {
+    filter: none;
+}
+
+
+.redBus-info {
+    height: 100%;
+    /* border: 2px solid green; */
+    flex-grow: 1;
+    display: flex;
+    justify-content: end;
+    gap: 50px;
+
+}
+
+.info-section {
+    width: 100px;
+    height: 100%;
+    border: 2px solid red;
+}
