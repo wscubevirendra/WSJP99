@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 800px;
+            height: 400px;
+            border: 2px double green;
+            margin: 50px auto;
+
+        }
+
+        .card {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            transition: 4s;
+
+
+        }
+
+        .container:hover .card {
+            /* transform: translateY(300px); Y-direction */
+            /* transform: translateX (300px); X-direction */
+            transform: translate(700px, 300px);
+
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+
+        </div>
+
+    </div>
+</body>
+
+</html>
