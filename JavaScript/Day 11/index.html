@@ -1,0 +1,98 @@
+<script>
+
+    // function trafficLight(sig) {
+    //     //signal=green
+    //     var signal = sig.toLowerCase()
+    //     console.log(signal)
+
+    //     if (signal === "red") {  //"Red===red"
+    //         console.log('Stop')
+    //     } else if (signal === "green") {
+    //         console.log("Go")
+    //     } else if (signal === "yellow") {
+    //         console.log("Ready to stop")
+    //     } else {
+    //         console.log("Invalid signal code")
+    //     }
+    // }
+
+    // trafficLight("RED")
+
+
+    // function findLargest(array) {
+    //     var largest = array[0];  //200
+
+    //     for (data of array) {
+    //         if (largest < data) {  
+    //             //10<200
+    //             largest = data
+    //         }
+    //     }
+
+    //     console.log(largest)
+
+    // }
+    // findLargest([10, 200, 30, 40])
+    // findLargest([1000, 2000, 30, 40])
+
+    // function quadrantFind(x, y) {
+    //     if (x > 0 && y > 0) {
+
+    //         console.log("I quadrant");
+    //     } else if (x < 0 && y > 0) {
+    //         console.log("II quadrant");
+
+    //     } else if (x < 0 && y < 0) {
+    //         console.log("III quadrant");
+
+    //     } else if (x > 0 && y < 0) {
+    //         console.log("IV quadrant");
+
+    //     } else if (x != 0 && y == 0) {
+    //         console.log("X axis")
+
+    //     } else if (x == 0 && y != 0) {
+    //         console.log("Y axis")
+
+    //     } else {
+    //         console.log("main-axis")
+
+    //     }
+
+    // }
+
+
+    // quadrantFind(0, 0)
+
+
+    //Find the status of day wheather it is morning, afternoon, evening,or night by input of time using function
+
+    //morning   5 to 12
+    //afternoon  12 to 17
+    //evening   17-20
+    //night  20-24 or 0-5
+
+
+    function wheatherFind(time) {
+        if (time >= 5 && time < 12) {
+            console.log("Good morning")
+        } else if (time >= 12 && time < 17) {
+            console.log("Good afternoon")
+        } else if (time >= 17 && time < 20) {
+            console.log("Good evening")
+        } else if ((time >= 20 && time < 24) || (time >= 0 && time < 5)) {
+
+            //false || true
+            console.log("Good Night")
+
+        } else {
+            console.log("Invalid time")
+        }
+
+    }
+
+    wheatherFind('2')
+
+
+
+</script>
