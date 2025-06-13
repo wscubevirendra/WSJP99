@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+
+        }
+
+        .parent {
+            width: 800px;
+            height: 500px;
+            background-color: white;
+            margin: 20px auto;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .other_images {
+            width: 20%;
+            height: 100%;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            overflow-y: scroll;
+            padding: 5px;
+            /* border: 2px solid red; */
+        }
+
+        #thumbnail {
+            width: 100%;
+            height: 100%;
+            /* border: 2px solid green; */
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            padding: 10px;
+        }
+
+        .other_images img {
+            width: 100%;
+            height: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="other_images">
+            <img src="1.jpeg" alt="">
+            <img src="2.jpeg" alt="">
+            <img src="3.jpeg" alt="">
+            <img src="4.jpeg" alt="">
+            <img src="5.jpeg" alt="">
+
+        </div>
+        <div id="thumbnail">
+            <img src="1.jpeg" width="100%" height="100%" alt="">
+        </div>
+
+
+    </div>
+
+
+
+    <script>
+        var thumbnail = document.querySelector("#thumbnail img");
+        var images = document.querySelectorAll(".other_images img");
+
+
+        for (image of images) {
+            console.log(image)
+            image.addEventListener(
+                "mousemove",
+                function (event) {
+                    thumbnail.src = event.target.src
+                }
+            )
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>

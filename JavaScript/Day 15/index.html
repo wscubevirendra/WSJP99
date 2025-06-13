@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #f0f0f0;
+            padding: 20px;
+            height: 82px;
+            font-size: 24px;
+            color: #333;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            width: 20%;
+            height: 100vh;
+            background-color: black;
+            position: fixed;
+            top: 0;
+            right: -100%;
+            transition: 600ms ease-in-out;
+        }
+
+        ul {
+            list-style: none;
+            padding: 10px;
+
+        }
+
+        #closeNav {
+            display: none;
+        }
+
+        .open {
+            right: 0;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        <i id="openNav" onclick="openMenu()" class="fa-solid fa-bars"></i>
+        <i id="closeNav" onclick="closeMenu()" class="fa-solid fa-xmark"></i>
+        <nav id="nav">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+
+
+    </header>
+
+    <script>
+        var navbar = document.getElementById("nav");
+        var closeNav = document.getElementById("closeNav");
+        var openNav = document.getElementById("openNav");
+
+        function openMenu() {
+            navbar.classList.toggle("open");
+            closeNav.style.display = "block";
+            openNav.style.display = "none";
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>

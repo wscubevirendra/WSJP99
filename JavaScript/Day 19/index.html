@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Tudo-App</title>
+    <style>
+        body {
+            background-color: aqua;
+        }
+
+        .container {
+            width: 800px;
+            height: 500px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            background-color: white;
+            margin: 20px auto;
+            padding: 16px;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+
+        }
+
+        .inp-btn button {
+            padding: 10px;
+            background-color: black;
+            color: white;
+            cursor: pointer;
+        }
+
+        #list {
+            list-style: none;
+        }
+
+        #list li {
+
+            background-color: gray;
+            padding: 10px;
+            position: relative;
+            margin-top: 20px;
+        }
+
+        #list li button {
+            background-color: teal;
+            position: absolute;
+            right: 20px;
+
+        }
+
+        .complete {
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="inp-btn">
+            <input id="inp" type="text">
+            <button>Add</button>
+        </div>
+        <ul id="list">
+
+        </ul>
+
+    </div>
+
+    <script>
+        var inp = document.querySelector("#inp");
+        var btn = document.querySelector(".inp-btn button");
+        var list = document.querySelector("#list");
+
+
+    
+
+
+        btn.addEventListener(
+            "click",
+            function (event) {
+                if (inp.value == "") return alert("Muje input value chaiye")
+                var li = document.createElement("li");
+                li.innerHTML = `<span>${inp.value} </span><button>Delete</button>`;
+                list.appendChild(li)
+                inp.value = ""
+
+
+            }
+        )
+
+
+        list.addEventListener(
+            "click",
+            removetask
+        )
+
+
+
+        function removetask(event) {
+            if (event.target.tagName === "BUTTON") {
+                event.target.parentElement.remove()
+            } else if (event.target.tagName === "SPAN") {
+                event.target.parentElement.classList.toggle("complete")
+            }
+
+        }
+
+
+
+
+    </script>
+
+</body>
+
+</html>

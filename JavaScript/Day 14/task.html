@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Document</title>
+    <style>
+        #box {
+            width: 300px;
+            height: 300px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="box">
+        Hello
+    </div>
+    <button onclick="changeStyle()">Add</button>
+
+    <script>
+        var box = document.getElementById("box");
+        function changeStyle() {
+            box.style.backgroundColor = "green";
+            box.style.color="white"
+            box.style.fontSize='50px'
+        }
+    </script>
+
+</body>
+
+</html>

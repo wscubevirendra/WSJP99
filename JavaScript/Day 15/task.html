@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+            margin: 10px;
+            display: inline-block;
+            text-align: center;
+            transition: all 0.3s ease-in-out;
+
+            font-size: 24px;
+        }
+
+        .card {
+            background-color: yellow;
+            color: red;
+            font-size: 30px;
+            transform: scale(1.2);
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div onclick="changeColor(this)" class="box">1</div>
+    <div onclick="changeColor(this)" class="box ">2</div>
+    <div onclick="changeColor(this)" class="box">3</div>
+    <div onclick="changeColor(this)" class="box">4</div>
+    <div onclick="changeColor(this)" class="box">5</div>
+    <div onclick="changeColor(this)" class="box">6</div>
+
+
+    <script>
+
+        function changeColor(elem) {
+            elem.classList.toggle("card");
+
+        }
+
+
+    </script>
+</body>
+
+</html>
