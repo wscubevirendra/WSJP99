@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 800px;
+            height: 400px;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            margin: 50px auto;
+            display: flex;
+            overflow: hidden;
+        }
+
+        .item {
+            width: 33%;
+            height: 100%;
+            padding: 10px;
+            transition: transform 1s ease;
+            flex-shrink: 0;
+
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .btn-container {
+            width: 100%;
+            text-align: center;
+            position: relative;
+        }
+
+        button {
+            padding: 6px 20px;
+            background-color: black;
+            color: white;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            position: absolute;
+            top: 0px;
+            left: 50%;
+        }
+
+        button:nth-child(1) {
+            left: 40%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item">
+            <img src="6.avif" alt="">
+        </div>
+        <div class="item">
+            <img src="1.jpeg" alt="">
+        </div>
+        <div class="item">
+            <img src="2.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="3.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="4.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="5.jpg" alt="">
+        </div>
+
+    </div>
+    <div class="btn-container">
+        <button>Prev</button>
+        <button>Next</button>
+
+    </div>
+
+
+    <script>
+        var btn = document.querySelectorAll("button");
+        var images = document.querySelectorAll(".item")
+        var poe = 0
+
+        btn[1].addEventListener(
+            "click",
+            function () {
+                if (images.length - 3 < poe) return
+                poe++
+                for (image of images) {
+                    image.style.transform = `translateX(-${poe * 50}%)`
+                }
+
+            }
+        )
+
+
+
+        btn[0].addEventListener(
+            "click",
+            function () {
+                if (poe === 0) return
+                poe--
+                for (image of images) {
+                    image.style.transform = `translateX(-${poe * 200}%)`
+                }
+
+            }
+        )
+
+
+    </script>
+
+</body>
+
+</html>
