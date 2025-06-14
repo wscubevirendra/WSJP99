@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .container {
+            width: 800px;
+            height: 400px;
+            /* border: 2px solid red; */
+            padding: 10px;
+            margin: 30px auto;
+
+
+        }
+
+        .faq-section {
+            width: 100%;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .btn {
+            width: 100%;
+            text-align: left;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .content {
+            height: 0;
+            opacity: 0;
+            text-align: justify;
+            padding: 0;
+            transition: 0.6s;
+            transform: scale(0);
+        }
+
+        .open {
+            height: auto;
+            opacity: 1;
+            padding: 4px;
+            font-size: 14px;
+            transform: scale(1);
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="faq-section">
+            <button class="btn">Can I track the location of my booked bus online?</button>
+            <p class="content open ">Yes, you can track your bus online by using our bus tracking app feature called
+                “Track
+                My
+                Bus”. This
+                feature allows passengers and their families to track the live bus location. You may follow your bus on
+                a map and use the information to plan your trip to the boarding point and to get off at the correct
+                stop. Family and friends may also check the bus position to schedule pick-ups and ensure safety.</p>
+        </div>
+        <div class="faq-section">
+            <button class="btn">What are the advantages of purchasing a bus ticket with redBus?</button>
+            <p class="content ">There are many advantages to purchasing online bus tickets with redBus. redBus is
+                India’s most trusted bus ticket company, where you can book any type of private or government-owned bus.
+                redBus allows you to find the different types of buses, choose the preferred bus seats, and find your
+                nearest boarding and dropping points. You can also filter the buses based on timings, like morning,
+                evening, etc. </p>
+        </div>
+        <div class="faq-section">
+            <button class="btn">Why book bus tickets online on redBus?</button>
+            <p class="content">Booking bus tickets online on redBus is increasingly becoming the preferred choice for
+                travellers due to its numerous advantages over traditional methods. With redBus, customers can book
+                their bus tickets effortlessly from the comfort of their homes, avoiding the inconvenience of standing
+                in long lines at bus stations or travel agencies. Online bus booking offers the luxury of comparing
+                different bus schedules and operators and presents various discount offers and exclusive deals,
+                resulting in significant savings. Payment security is another notable feature of online booking, which
+                ensures that your financial information is well-protected against fraud. Additionally, customers can
+                pick their seats, providing a customized travel experience. Online bus booking platforms give real-time
+                updates about any changes in the bus timetable, including delays or cancellations, enabling better
+                planning. The convenience doesn't stop here; travellers can even compare onboard amenities like charging
+                points or snacks, further enhancing the travel experience.</p>
+        </div>
+         <div class="faq-section">
+            <button class="btn">Why book bus tickets online on redBus?</button>
+            <p class="content">Booking bus tickets online on redBus is increasingly becoming the preferred choice for
+                travellers due to its numerous advantages over traditional methods. With redBus, customers can book
+                their bus tickets effortlessly from the comfort of their homes, avoiding the inconvenience of standing
+                in long lines at bus stations or travel agencies. Online bus booking offers the luxury of comparing
+                different bus schedules and operators and presents various discount offers and exclusive deals,
+                resulting in significant savings. Payment security is another notable feature of online booking, which
+                ensures that your financial information is well-protected against fraud. Additionally, customers can
+                pick their seats, providing a customized travel experience. Online bus booking platforms give real-time
+                updates about any changes in the bus timetable, including delays or cancellations, enabling better
+                planning. The convenience doesn't stop here; travellers can even compare onboard amenities like charging
+                points or snacks, further enhancing the travel experience.</p>
+        </div>
+         <div class="faq-section">
+            <button class="btn">Why book bus tickets online on redBus?</button>
+            <p class="content">Booking bus tickets online on redBus is increasingly becoming the preferred choice for
+                travellers due to its numerous advantages over traditional methods. With redBus, customers can book
+                their bus tickets effortlessly from the comfort of their homes, avoiding the inconvenience of standing
+                in long lines at bus stations or travel agencies. Online bus booking offers the luxury of comparing
+                different bus schedules and operators and presents various discount offers and exclusive deals,
+                resulting in significant savings. Payment security is another notable feature of online booking, which
+                ensures that your financial information is well-protected against fraud. Additionally, customers can
+                pick their seats, providing a customized travel experience. Online bus booking platforms give real-time
+                updates about any changes in the bus timetable, including delays or cancellations, enabling better
+                planning. The convenience doesn't stop here; travellers can even compare onboard amenities like charging
+                points or snacks, further enhancing the travel experience.</p>
+        </div>
+
+    </div>
+
+    <script>
+        var container = document.querySelector(".container");
+        var content = document.querySelectorAll(".content");
+
+        container.addEventListener(
+            "click",
+            function (event) {
+                if (event.target.classList.contains("btn")) {
+                    var currentContent = event.target.nextElementSibling;
+                    content.forEach(
+                        function (p) {
+                            if (p !== currentContent){
+                                p.classList.remove("open")
+                            }
+                        }
+                    )
+                    currentContent.classList.toggle("open")
+                }
+            }
+        )
+
+    </script>
+
+</body>
+
+</html>
