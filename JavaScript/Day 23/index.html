@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .parent {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: space-around;
+            padding: 10px;
+
+
+        }
+
+        .box {
+            width: calc(20% - 10px);
+            height: 200px;
+            /* border: 2px solid black; */
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .overlay {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            /* background-color: red; */
+            transform: scale(0);
+            transition: transform 0.5s ease-in-out;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 29px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent"></div>
+    <div class="overlay"></div>
+    <audio src="music.wav" id="audio"></audio>
+    <script>
+        var parent = document.querySelector('.parent');
+        var overlay = document.querySelector('.overlay');
+        var audio = document.querySelector('#audio');
+        var message = ["Copied", "Good Job", "Well Done", "Nice", "Great", "Awesome", "Perfect", "Superb", "Excellent", "Fantastic", "Brilliant", "Amazing", "Incredible", "Outstanding", "Remarkable", "Exceptional", "Impressive", "Marvelous", "Stunning"];
+
+        for (var i = 1; i <= 10; i++) {
+            var box = document.createElement("div");
+            box.classList.add("box");
+            var r = parseInt(Math.random() * 256).toString(16).padStart(2, "0"); // Generate a random number between 0 and 255 and convert to hex
+
+            var g = parseInt(Math.random() * 256).toString(16).padStart(2, "0");
+            var b = parseInt(Math.random() * 256).toString(16).padStart(2, "0");
+            var code = "#" + r + g + b;
+            box.style.backgroundColor = code;
+            box.innerText = code;
+
+            parent.appendChild(box);
+
+
+            box.addEventListener("click", function (e) {
+                navigator.clipboard.writeText(e.target.innerText);
+                overlay.style.transform = "scale(1)";
+                overlay.style.backgroundColor = e.target.style.backgroundColor;
+                audio.play();
+                overlay.innerText = message[Math.floor(Math.random() * message.length)];
+                setTimeout(
+                    function () {
+                        overlay.style.transform = "scale(0)";
+                    },
+                    1000
+                )
+
+            })
+
+        }
+
+
+    </script>
+</body>
+
+</html>

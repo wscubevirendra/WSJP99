@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .card {
+            width: 200px;
+            height: 70px;
+            padding: 10px;
+            box-shadow: 1px 0px 2px 3px rgb(155, 145, 145);
+            margin: 200px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        button {
+            /* background-color:whiblue; */
+            padding: 10px;
+            /* color: white; */
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <button>Start</button>
+        <h1>0</h1>
+        <button disabled>Stop</button>
+
+
+    </div>
+
+
+    <script>
+        var button = document.querySelectorAll("button");
+        var h1 = document.querySelector("h1");
+        var count = 0;
+        var countFunction;
+
+        button[0].addEventListener(
+            "click",
+            function () {
+
+                countFunction = setInterval(
+                    function () {
+                        count++
+                        h1.innerText = count
+
+                    },
+                    1000
+                )
+                button[0].disabled = true
+                button[1].disabled = false
+
+            }
+        )
+
+        button[1].addEventListener(
+            "click",
+            function () {
+                clearInterval(countFunction)
+                button[0].disabled = false
+                button[1].disabled = true
+
+
+            }
+
+        )
+
+    </script>
+
+</body>
+
+</html>

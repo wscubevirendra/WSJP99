@@ -1,0 +1,48 @@
+.flash-sale {
+    background-color: #362526;
+    color: white;
+    padding: 16px;
+    padding-bottom: 170px;
+
+}
+
+
+.flash-sale2 {
+    background-color: #F6AB4A;
+    color: white;
+    padding: 16px;
+    padding-bottom: 170px;
+
+}
+
+.flash-sale ul li {
+    background-color: #FFFFFF11;
+    width: 100%;
+    color: #FFFFFF;
+    font-size: 14px;
+}
+
+.product-card {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.dog {
+    height: 265px;
+}
+
+.price-product {
+    color: #362526;
+}
+
+.mytab {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.mycontainer {
+    margin-top: 100px;
+}
+
+.cat-image{
+    bottom: -20px;   
+}
