@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+    <style>
+        #form {
+            max-width: 600px;
+            margin: auto;
+            box-shadow: 2px 3px 2px white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form id="form">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Name</label>
+                <input name="name" type="text" class="form-control" id="exampleInputEmail1"
+                    aria-describedby="emailHelp">
+
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email</label>
+                <input name="email" type="email" class="form-control" id="exampleInputEmail1"
+                    aria-describedby="emailHelp">
+
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Age</label>
+                <input name="age" type="number" class="form-control" id="exampleInputPassword1">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+        <div class="row gy-4 my-5">
+
+
+        </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+
+    <script>
+
+        const form = document.querySelector("#form");
+        const row = document.querySelector(".row");
+
+
+        form.addEventListener(
+            "submit",
+            (event) => {
+                event.preventDefault()
+                const data = {
+                    name: event.target.name.value,
+                    email: event.target.email.value,
+                    age: event.target.age.value
+                }
+
+
+
+                const users = JSON.parse(localStorage.getItem("users")) ?? [];
+                
+                const update = [...users, data]
+                localStorage.setItem("users", JSON.stringify(update))
+                showData()
+                event.target.reset()
+
+            }
+        )
+
+
+        function showData() {
+            const users = JSON.parse(localStorage.getItem("users")) ?? [];
+            users.map((data, index) => {
+                const box = document.createElement("div");
+                box.classList.add("col-4")
+                box.innerHTML = `
+                <div class="card p-2">
+                    <strong>Name</strong>
+                    <h6>${data.name}</h6>
+                    <strong>Email</strong>
+                    <h6>${data.email}</h6>
+                    <strong>AGe</strong>
+                    <h6>${data.age}</h6>
+                </div>
+                `
+                row.appendChild(box)
+            })
+
+
+
+        }
+
+        showData()
+
+
+
+
+    </script>
+</body>
+
+</html>
