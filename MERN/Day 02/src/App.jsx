@@ -1,17 +1,22 @@
-import Card from "./Card"
+import DarkMode from './DarkMode';
+import NavbarToggle from './NavbarToggle';
+import PasswordToggle from './PasswordToggle';
+import AuthToggle from './AuthToggle';
+
 
 function App() {
     return (
-        <div className="container-xxl">
-            <div className="row">
-                <Card star="2" image="https://cdn.dummyjson.com/recipe-images/1.webp" />
-                <Card title="Pasta" star="3" image="https://cdn.dummyjson.com/recipe-images/4.webp" />
-                <Card title="Tomato " star="5" image="https://cdn.dummyjson.com/recipe-images/7.webp" />
-            </div>
-
+        <div>
+            <DarkMode />
+            <hr />
+            <NavbarToggle />
+            <hr />
+            <PasswordToggle />
+            <hr />
+            <AuthToggle />
+            <hr />
         </div>
-
-    )
+    );
 }
 
 export default App;
