@@ -1,19 +1,38 @@
 import React from 'react'
 
+
 export default function App() {
   return (
-    <div className='w-full bg-teal-400'>
-      <div className='max-w-7xl p-4 flex justify-between space-x-1 space-y-2  items-center flex-wrap'>
-        <div className='p-2 flex-1  w-[200px] bg-amber-100'>
-          1. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod veritatis sunt accusamus sequi laborum, soluta quam repellat voluptatibus delectus, error, saepe id! Minima, itaque praesentium? Debitis quidem distinctio voluptatibus voluptatum!
+    <>
+      <header className='w-full mb-10 shadow-2xl p-4'>
+        <div className=' max-w-7xl flex justify-between mx-auto'>
+          <h1 className='font-extrabold text-blue-700 uppercase animate-bounce'>WsCube tech</h1>
+          <ul className=' hidden sm:flex  gap-10'>
+            <li className='text-gray-800 font-bold'>Home</li>
+            <li className='text-gray-800 font-bold'>About</li>
+            <li className='text-gray-800 font-bold'>Contact</li>
+            <li className='text-gray-800 font-bold'>Services</li>
+          </ul>
         </div>
-        <div className='p-2 w-[200px] bg-amber-100'>
-          2. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod veritatis sunt accusamus sequi laborum, soluta quam repellat voluptatibus delectus, error, saepe id! Minima, itaque praesentium? Debitis quidem distinctio voluptatibus voluptatum!
-        </div>
-        
 
+
+
+      </header>
+
+      <div className='max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 p-2'>
+        <div className='bg-amber-900 col-span-2 sm:col-span-3 text-center text-white text-4xl pt-4 rounded-lg shadow-2xl min-h-20 '>1</div>
+        <div className='bg-teal-900 text-center text-white text-4xl pt-4 rounded-lg shadow-2xl min-h-20'>2</div>
+        <div className='bg-red-900 text-center text-white text-4xl pt-4 rounded-lg shadow-2xl min-h-20'>3</div>
+        <div className='bg-green-900 text-center text-white text-4xl pt-4 rounded-lg shadow-2xl min-h-20  '>4</div>
+        <div className='bg-sky-900 text-center text-white text-4xl pt-4 rounded-lg shadow-2xl min-h-20'>5</div>
+        <div className=' bg-yellow-800 text-center text-white text-4xl pt-4 rounded-lg shadow-2xl min-h-20'>6</div>
+        <div className='bg-pink-900 text-center text-white text-4xl pt-4 rounded-lg shadow-2xl min-h-20'>7</div>
+        <div className='bg-sky-900 text-center text-white text-4xl pt-4 rounded-lg shadow-2xl min-h-20'>8</div>
+        <div className='bg-sky-900 text-center text-white text-4xl pt-4 rounded-lg shadow-2xl min-h-20'>9</div>
+        <div className='bg-sky-900 text-center text-white text-4xl pt-4 rounded-lg shadow-2xl min-h-20'>10</div>
       </div>
+    </>
 
-    </div>
+
   )
 }
