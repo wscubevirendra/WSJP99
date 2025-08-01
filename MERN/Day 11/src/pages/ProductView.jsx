@@ -32,7 +32,6 @@ export default function ProductView() {
 
     return (
         <>
-            <Header />
             <div className="max-w-7xl mx-auto p-6">
                 <div className="flex flex-col md:flex-row gap-8">
                     {/* Image */}

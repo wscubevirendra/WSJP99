@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { FiShoppingCart } from "react-icons/fi";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
+import { context } from "../pages/Store";
 
 export default function Listing() {
+    const { addtoCart } = useContext(context)
     const { category_slug } = useParams();
     const [products, setProducts] = useState([]);
     const [categories, setCategories] = useState([]);
@@ -46,12 +48,7 @@ export default function Listing() {
     useEffect(() => {
         axios.get("https://dummyjson.com/products/categories")
             .then((response) => {
-                // Convert string array to object format
-                const formatted = response.data.map(cat => ({
-                    slug: cat,
-                    name: cat.charAt(0).toUpperCase() + cat.slice(1),
-                }));
-                setCategories(formatted);
+                setCategories(response.data);
             })
             .catch(() => setCategories([]));
     }, []);
@@ -135,6 +132,7 @@ export default function Listing() {
                                     </h3>
                                     <p className="text-indigo-600 font-bold text-xl">${product.price}</p>
                                     <button
+                                        onClick={() => addtoCart(product.id)}
                                         className="mt-3 bg-indigo-600 text-white flex items-center justify-center gap-2 py-2 rounded-lg hover:bg-indigo-700 transition"
                                     >
                                         <FiShoppingCart />
