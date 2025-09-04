@@ -1,8 +1,9 @@
 'use client'
 import React, { useRef } from "react";
-import { createSlug, notify, axiosInstance } from "@/library/helper";
+import { createSlug, notify, axiosInstance, getCookies } from "@/library/helper";
 
 export default function ColorAdd() {
+    const token = getCookies('admin_token');
     const nameRef = useRef();
     const slugRef = useRef();
 
@@ -21,7 +22,11 @@ export default function ColorAdd() {
             hexcode: e.target.hexcode.value
         }
 
-        axiosInstance.post("color/create", data).then(
+        axiosInstance.post("color/create", data, {
+            headers: {
+                Authorization: token
+            }
+        }).then(
             (response) => {
                 notify(response.data.message, response.data.success)
                 if (response.data.success) {
@@ -53,7 +58,7 @@ export default function ColorAdd() {
                             placeholder="Ex: Wireless Headphones"
                             className="peer w-full rounded-xl border border-gray-300 bg-gray-50 py-3 pl-11 pr-3 placeholder:text-gray-400 text-gray-900 outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
                         />
-                       
+
                     </div>
                 </div>
 
@@ -63,7 +68,7 @@ export default function ColorAdd() {
                         <label htmlFor="slug" className="block text-sm font-medium mb-2 text-gray-700">
                             Slug
                         </label>
-                       
+
                     </div>
                     <div className="relative">
                         <input
@@ -73,7 +78,7 @@ export default function ColorAdd() {
                             placeholder="wireless-headphones"
                             className="peer w-full rounded-xl border border-gray-300 bg-gray-50 py-3 pl-11 pr-3 placeholder:text-gray-400 text-gray-900 outline-none focus:ring-2 focus:ring-fuchsia-500 focus:border-fuchsia-500 transition"
                         />
-                        
+
                     </div>
                 </div>
                 <div className="mb-5">
@@ -81,7 +86,7 @@ export default function ColorAdd() {
                         <label htmlFor="slug" className="block text-sm font-medium mb-2 text-gray-700">
                             Color Code
                         </label>
-                       
+
                     </div>
                     <div className="relative">
                         <input

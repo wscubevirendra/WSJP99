@@ -4,6 +4,7 @@ const { noContentResponse, createdResponse, serverErrorResponse, errorResponse, 
 const color = {
     async create(req, res) {
         try {
+            console.log(req.user)
 
             const { name, slug, hexcode } = req.body
             if (!name || !slug || !hexcode) {

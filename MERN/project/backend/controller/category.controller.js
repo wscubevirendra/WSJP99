@@ -1,4 +1,5 @@
 const categoryModel = require('../model/category.model')
+const productModel = require('../model/product.model')
 const { noContentResponse, createdResponse, serverErrorResponse, errorResponse, successResponse, deletedResponse, updatedResponse } = require('../utility/response')
 const { createUniqueName } = require('../utility/helper');
 const fs = require('fs')
@@ -47,7 +48,22 @@ const category = {
             if (id) {
                 category = await categoryModel.findById(id)
             } else {
-                category = await categoryModel.find()
+                category = await categoryModel.find();
+
+                const data = await Promise.all(
+                    category.map(
+                        async (cat) => {
+                            const productCount = await productModel.countDocuments({ categoryId: cat._id });
+                        
+                            return {
+                                ...cat.toObject(),
+                                productCount
+                            }
+
+                        }
+                    )
+                )
+                return successResponse(res, "Category Found", data)
             }
 
             if (!category) errorResponse(res, "Category not found")

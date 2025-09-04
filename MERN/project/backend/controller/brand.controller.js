@@ -1,4 +1,5 @@
 const brandModel = require('../model/brand.model')
+const productModel = require('../model/product.model')
 const { noContentResponse, createdResponse, serverErrorResponse, errorResponse, successResponse, deletedResponse, updatedResponse } = require('../utility/response')
 const { createUniqueName } = require('../utility/helper');
 const fs = require('fs')
@@ -48,6 +49,21 @@ const brand = {
                 brand = await brandModel.findById(id)
             } else {
                 brand = await brandModel.find()
+                const data = await Promise.all(
+                    brand.map(
+                        async (br) => {
+                            const productCount = await productModel.countDocuments({ brandId: br._id });
+
+                            return {
+                                ...br.toObject(),
+                                productCount
+                            }
+
+                        }
+                    )
+                )
+                return successResponse(res, "brand Found", data)
+
             }
 
             if (!brand) errorResponse(res, "brand not found")

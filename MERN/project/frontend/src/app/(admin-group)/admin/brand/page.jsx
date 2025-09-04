@@ -1,8 +1,8 @@
 import { FaEdit, FaTrash } from "react-icons/fa";
 import Link from "next/link";
 import { getBrands } from "@/library/api-call";
-import DeleteBtn from "@/components/website/DeleteBtn";
-import StatusBtn from "@/components/website/StatusBtn";
+import DeleteBtn from "@/components/admin/DeleteBtn";
+import StatusBtn from "@/components/admin/StatusBtn";
 
 export default async function BrandView() {
     const brandJSON = await getBrands();

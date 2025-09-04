@@ -1,66 +1,125 @@
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { FaTwitter, FaFacebookF, FaInstagram, FaYoutube, FaPinterestP } from "react-icons/fa";
+import { MdKeyboardArrowDown } from "react-icons/md";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-300 py-10">
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
-        
-        {/* Company Info */}
-        <div>
-          <h2 className="text-2xl font-bold text-white mb-4">Shop<span className="text-blue-500">Ease</span></h2>
-          <p className="text-sm">
-            Your one-stop shop for all things fashion, electronics, and lifestyle.  
-            Quality products at the best prices.
+    <footer className="w-full bg-white border-t pt-10">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-5 gap-10">
+        {/* Left section */}
+        <div className="col-span-1">
+          <h2 className="font-bold text-lg">SWOO - 1ST NYC TECH ONLINE MARKET</h2>
+          <p className="mt-2 text-sm text-gray-500">HOTLINE 24/7</p>
+          <p className="text-green-600 font-bold text-xl">(025) 3686 25 16</p>
+          <p className="mt-2 text-sm text-gray-500">
+            257 Thatcher Road St, Brooklyn, Manhattan, NY 10092
           </p>
-        </div>
+          <p className="text-sm text-gray-500">contact@swootechmart.com</p>
 
-        {/* Quick Links */}
-        <div>
-          <h3 className="text-lg font-semibold text-white mb-4">Quick Links</h3>
-          <ul className="space-y-2 text-sm">
-            <li><a href="#" className="hover:text-blue-400">Home</a></li>
-            <li><a href="#" className="hover:text-blue-400">Shop</a></li>
-            <li><a href="#" className="hover:text-blue-400">Deals</a></li>
-            <li><a href="#" className="hover:text-blue-400">Contact</a></li>
-          </ul>
-        </div>
-
-        {/* Support */}
-        <div>
-          <h3 className="text-lg font-semibold text-white mb-4">Support</h3>
-          <ul className="space-y-2 text-sm">
-            <li><a href="#" className="hover:text-blue-400">Help Center</a></li>
-            <li><a href="#" className="hover:text-blue-400">Returns & Refunds</a></li>
-            <li><a href="#" className="hover:text-blue-400">Shipping Info</a></li>
-            <li><a href="#" className="hover:text-blue-400">FAQs</a></li>
-          </ul>
-        </div>
-
-        {/* Newsletter & Social */}
-        <div>
-          <h3 className="text-lg font-semibold text-white mb-4">Stay Connected</h3>
-          <form className="flex items-center mb-4">
-            <input 
-              type="email" 
-              placeholder="Enter your email" 
-              className="w-full px-3 py-2 rounded-l-md outline-none text-black"
-            />
-            <button className="bg-blue-500 px-4 py-2 rounded-r-md text-white font-semibold hover:bg-blue-600">
-              Subscribe
-            </button>
-          </form>
-          <div className="flex space-x-4 text-lg">
-            <a href="#" className="hover:text-blue-400"><FaFacebookF /></a>
-            <a href="#" className="hover:text-blue-400"><FaTwitter /></a>
-            <a href="#" className="hover:text-blue-400"><FaInstagram /></a>
-            <a href="#" className="hover:text-blue-400"><FaLinkedinIn /></a>
+          {/* Social icons */}
+          <div className="flex items-center gap-4 mt-4">
+            <FaTwitter className="w-8 h-8 p-2 bg-gray-100 rounded-full cursor-pointer hover:text-green-600" />
+            <FaFacebookF className="w-8 h-8 p-2 bg-gray-100 rounded-full cursor-pointer hover:text-green-600" />
+            <FaInstagram className="w-8 h-8 p-2 bg-gray-100 rounded-full cursor-pointer hover:text-green-600" />
+            <FaYoutube className="w-8 h-8 p-2 bg-gray-100 rounded-full cursor-pointer hover:text-green-600" />
+            <FaPinterestP className="w-8 h-8 p-2 bg-gray-100 rounded-full cursor-pointer hover:text-green-600" />
           </div>
+
+          {/* Currency + Language */}
+          <div className="flex items-center gap-4 mt-6">
+            <button className="border px-4 py-2 rounded-md flex items-center gap-1 text-sm">
+              USD <MdKeyboardArrowDown />
+            </button>
+            <button className="border px-4 py-2 rounded-md flex items-center gap-1 text-sm">
+              <img src="https://flagcdn.com/us.svg" alt="us-flag" className="w-5 h-5 rounded-full" />
+              Eng <MdKeyboardArrowDown />
+            </button>
+          </div>
+        </div>
+
+        {/* Links */}
+        <div>
+          <h3 className="font-bold mb-3">TOP CATEGORIES</h3>
+          <ul className="space-y-2 text-sm text-gray-600">
+            <li>Laptops</li>
+            <li>PC & Computers</li>
+            <li>Cell Phones</li>
+            <li>Tablets</li>
+            <li>Gaming & VR</li>
+            <li>Networks</li>
+            <li>Cameras</li>
+            <li>Sounds</li>
+            <li>Office</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="font-bold mb-3">COMPANY</h3>
+          <ul className="space-y-2 text-sm text-gray-600">
+            <li>About Swoo</li>
+            <li>Contact</li>
+            <li>Career</li>
+            <li>Blog</li>
+            <li>Sitemap</li>
+            <li>Store Locations</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="font-bold mb-3">HELP CENTER</h3>
+          <ul className="space-y-2 text-sm text-gray-600">
+            <li>Customer Service</li>
+            <li>Policy</li>
+            <li>Terms & Conditions</li>
+            <li>Track Order</li>
+            <li>FAQs</li>
+            <li>My Account</li>
+            <li>Product Support</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="font-bold mb-3">PARTNER</h3>
+          <ul className="space-y-2 text-sm text-gray-600">
+            <li>Become Seller</li>
+            <li>Affiliate</li>
+            <li>Advertise</li>
+            <li>Partnership</li>
+          </ul>
         </div>
       </div>
 
-      {/* Bottom Bar */}
-      <div className="border-t border-gray-700 mt-8 pt-4 text-center text-sm text-gray-500">
-        © {new Date().getFullYear()} ShopEase. All rights reserved.
+      {/* Subscribe */}
+      <div className="max-w-7xl mx-auto px-6 mt-10">
+        <h3 className="font-bold">
+          SUBSCRIBE & GET <span className="text-red-500">10% OFF</span> FOR YOUR FIRST ORDER
+        </h3>
+        <div className="flex mt-3">
+          <input
+            type="email"
+            placeholder="Enter your email address"
+            className="flex-1 border border-gray-300 px-4 py-2 rounded-l-md text-sm outline-none"
+          />
+          <button className="bg-green-600 text-white px-6 py-2 rounded-r-md text-sm">
+            SUBSCRIBE
+          </button>
+        </div>
+        <p className="text-xs text-gray-500 mt-1">
+          By subscribing, you’re accepting the our <span className="underline">Policy</span>
+        </p>
+      </div>
+
+      {/* Bottom */}
+      <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center border-t mt-10 text-sm text-gray-500">
+        <p>© 2024 <span className="font-bold">Shawonetc3</span>. All Rights Reserved</p>
+        <div className="flex items-center gap-4 mt-3 md:mt-0">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Paypal_2014_logo.png" alt="paypal" className="h-6" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="visa" className="h-6" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Stripe_Logo%2C_revised_2016.svg" alt="stripe" className="h-6" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Klarna_Logo_black.svg" alt="klarna" className="h-6" />
+        </div>
+        <a href="#" className="text-blue-500 mt-3 md:mt-0">
+          Mobile Site
+        </a>
       </div>
     </footer>
   );

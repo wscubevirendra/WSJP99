@@ -1,57 +1,70 @@
-import { FaShoppingCart, FaUser, FaSearch } from "react-icons/fa";
+import { FaPhoneAlt, FaRegHeart, FaShoppingCart } from "react-icons/fa";
+import { MdKeyboardArrowDown } from "react-icons/md";
+import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className="w-full shadow-md bg-white">
-      <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
-        
-        {/* Logo */}
-        <div className="text-2xl font-bold text-gray-800">
-          Shop<span className="text-blue-600">Ease</span>
+    <header className="w-full bg-white shadow-sm">
+      {/* Top bar */}
+      <div className="flex justify-between items-center text-sm px-6 py-2 border-b">
+        <div className="flex items-center gap-4">
+          <span className="bg-gray-100 px-2 py-1 rounded-md">Hotline 24/7</span>
+          <span className="flex items-center gap-2 font-semibold">
+            <FaPhoneAlt className="text-green-500" /> (025) 3886 25 16
+          </span>
         </div>
-
-        {/* Search Bar */}
-        <div className="hidden md:flex flex-1 mx-6">
-          <div className="relative w-full">
-            <input
-              type="text"
-              placeholder="Search for products..."
-              className="w-full border rounded-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-            <FaSearch className="absolute right-3 top-3 text-gray-500" />
+        <div className="flex items-center gap-6">
+          <button className="hover:text-green-600">Sell on Swoo</button>
+          <button className="hover:text-green-600">Order Tracki</button>
+          <div className="flex items-center gap-1 cursor-pointer">
+            USD <MdKeyboardArrowDown />
           </div>
-        </div>
-
-        {/* Navigation + Icons */}
-        <div className="flex items-center space-x-6">
-          <nav className="hidden md:flex space-x-6 font-medium text-gray-700">
-            <a href="#" className="hover:text-blue-600">Home</a>
-            <a href="#" className="hover:text-blue-600">Shop</a>
-            <a href="#" className="hover:text-blue-600">Deals</a>
-            <a href="#" className="hover:text-blue-600">Contact</a>
-          </nav>
-
-          <div className="flex items-center space-x-4 text-gray-700 text-xl">
-            <FaUser className="cursor-pointer hover:text-blue-600" />
-            <div className="relative cursor-pointer">
-              <FaShoppingCart className="hover:text-blue-600" />
-              <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
-                3
-              </span>
-            </div>
+          <div className="flex items-center gap-1 cursor-pointer">
+            <img
+              src="https://flagcdn.com/us.svg"
+              alt="us-flag"
+              className="w-5 h-5 rounded-full"
+            />
+            Eng <MdKeyboardArrowDown />
           </div>
         </div>
       </div>
 
-      {/* Mobile Search Bar */}
-      <div className="px-6 py-2 md:hidden">
-        <div className="relative w-full">
-          <input
-            type="text"
-            placeholder="Search for products..."
-            className="w-full border rounded-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          <FaSearch className="absolute right-3 top-3 text-gray-500" />
+      {/* Main navbar */}
+      <div className="flex justify-between items-center px-6 py-4">
+        {/* Logo */}
+        <div className="flex items-center gap-2">
+          <img src="logo.png" alt="Swoo Logo" className="w-30 h-10" />
+        </div>
+
+        {/* Menu */}
+        <nav className="flex items-center gap-8 font-semibold">
+          <div className="flex items-center gap-1 cursor-pointer">
+            HOMES 
+          </div>
+          <div className="flex items-center gap-1 cursor-pointer">
+            PAGES 
+          </div>
+          <div className="flex items-center gap-1 cursor-pointer">
+            <Link href="/store">STORE </Link>
+          </div>
+          <button>CONTACT</button>
+        </nav>
+
+        {/* Right section */}
+        <div className="flex items-center gap-6">
+          <FaRegHeart className="text-gray-500 text-xl cursor-pointer" />
+          <div>
+            <p className="text-xs text-gray-400">WELCOME</p>
+            <button className="font-semibold">LOG IN / REGISTER</button>
+          </div>
+          <div className="relative flex items-center gap-2">
+            <FaShoppingCart className="text-xl cursor-pointer" />
+            <span className="absolute -top-2 left-3 bg-green-500 text-white text-xs px-2 py-0.5 rounded-full">
+              5
+            </span>
+            <span className="font-semibold">$1,689.00</span>
+          </div>
         </div>
       </div>
     </header>

@@ -57,8 +57,11 @@ export default function SideMenu() {
                 {/* Stock */}
                 <div className="flex items-center justify-between py-2 px-2 rounded hover:bg-gray-100 cursor-pointer">
                     <div className="flex items-center gap-3">
-                        <FaDollarSign size={16} />
-                        <span>Stock</span>
+                        <Link href="/admin/product">
+                            <FaDollarSign size={16} />
+                        </Link>
+
+                        <span>Product</span>
                     </div>
                     <span className="bg-yellow-100 text-yellow-700 text-[10px] font-semibold px-2 py-0.5 rounded">NEW</span>
                 </div>
