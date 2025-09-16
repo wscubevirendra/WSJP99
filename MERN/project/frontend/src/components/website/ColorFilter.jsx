@@ -10,7 +10,7 @@ export default function ColorFilter({ colors }) {
         () => {
             const color = new URLSearchParams({ color: selcolor });
             if (selcolor) {
-                router.push(`/store?${color.toString()}`);
+                router.push(`?${color.toString()}`);
             }
 
         },

@@ -49,7 +49,7 @@ const product = {
     },
     async read(req, res) {
         try {
-            const { categorySlug, brandSlug, colorSlug } = req.query;
+            const { categorySlug, brandSlug, colorSlug, min, max } = req.query;
             console.log("slug check", brandSlug)
             const id = req.params.id
             const filterQuery = {};
@@ -72,12 +72,22 @@ const product = {
                     filterQuery.colors = color._id;
                 }
             }
+
+
+            if (min && max) {
+                filterQuery.finalPrice = {
+                    $gte: min,
+                    $lte: max
+                }
+
+            }
             console.log(filterQuery)
             let product = null;
             if (id) {
                 product = await productModel.findById(id)
             } else {
-                product = await productModel.find(filterQuery).populate(['colors', 'brandId', 'categoryId'])
+                product = await productModel.find(filterQuery).populate(['colors', 'brandId', 'categoryId']).limit(20)
+                console.log(product)
             }
 
             if (!product) errorResponse(res, "product not found")

@@ -1,8 +1,21 @@
+'use client'
+
 import { FaPhoneAlt, FaRegHeart, FaShoppingCart } from "react-icons/fa";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import Link from "next/link";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { lstoCart } from "@/redux/features/cartSlice";
 
 export default function Header() {
+  const dispatcher = useDispatch()
+  const cart = useSelector((state) => state.cart);
+  useEffect(
+    () => {
+      dispatcher(lstoCart())
+    },
+    [dispatcher]
+  )
   return (
     <header className="w-full bg-white shadow-sm">
       {/* Top bar */}
@@ -40,10 +53,10 @@ export default function Header() {
         {/* Menu */}
         <nav className="flex items-center gap-8 font-semibold">
           <div className="flex items-center gap-1 cursor-pointer">
-            HOMES 
+            HOMES
           </div>
           <div className="flex items-center gap-1 cursor-pointer">
-            PAGES 
+            <Link href="/profile">PROFILE</Link>
           </div>
           <div className="flex items-center gap-1 cursor-pointer">
             <Link href="/store">STORE </Link>
@@ -58,13 +71,15 @@ export default function Header() {
             <p className="text-xs text-gray-400">WELCOME</p>
             <button className="font-semibold">LOG IN / REGISTER</button>
           </div>
+          <Link href="/cart">
           <div className="relative flex items-center gap-2">
             <FaShoppingCart className="text-xl cursor-pointer" />
             <span className="absolute -top-2 left-3 bg-green-500 text-white text-xs px-2 py-0.5 rounded-full">
-              5
+              {cart?.items.length || 0}
             </span>
-            <span className="font-semibold">$1,689.00</span>
-          </div>
+            <span className="font-semibold">₹{cart.final_total}</span>
+          </div></Link>
+          
         </div>
       </div>
     </header>

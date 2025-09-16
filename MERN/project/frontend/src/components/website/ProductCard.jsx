@@ -1,7 +1,8 @@
-import { FaShoppingCart } from "react-icons/fa";
+import CartBtn from "./CartBtn";
+
 
 export default function ProductCard({ product }) {
-    const { name, finalPrice, discountPercentage, originalPrice, thumbnail } = product
+    const { name, finalPrice, discountPercentage, originalPrice, thumbnail, colors, _id } = product
     return (
         <div className="w-64 bg-white rounded-2xl shadow-md overflow-hidden relative group p-4">
             {/* Discount Badge */}
@@ -32,15 +33,17 @@ export default function ProductCard({ product }) {
 
                 {/* Color Dots */}
                 <div className="flex gap-2 mt-2">
-                    <span className="w-5 h-5 bg-black rounded-full cursor-pointer border"></span>
-                    <span className="w-5 h-5 bg-blue-500 rounded-full cursor-pointer border"></span>
-                    <span className="w-5 h-5 bg-red-500 rounded-full cursor-pointer border"></span>
+                    {
+                        colors?.map((color) => {
+                            return <span style={{ background: color.hexcode }} className="w-5 h-5 rounded-full cursor-pointer border"></span>
+
+                        })
+                    }
+
                 </div>
 
-                {/* Add to Cart Button */}
-                <button className="mt-4 w-full flex items-center justify-center gap-2 bg-green-600 text-white py-2 rounded-lg font-medium hover:bg-green-700 transition">
-                    <FaShoppingCart /> Add to Cart
-                </button>
+                <CartBtn finalPrice={finalPrice} productId={_id} originalPrice={originalPrice} />
+
             </div>
         </div>
     );

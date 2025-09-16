@@ -1,6 +1,7 @@
 import BrandFilter from "@/components/website/BrandFilter";
 import Category from "@/components/website/Category";
 import ColorFilter from "@/components/website/ColorFilter";
+import PriceFilter from "@/components/website/PriceFilter";
 import { getBrands, getCategories, getColors } from "@/library/api-call";
 
 
@@ -30,6 +31,7 @@ export default async function RootLayout({ children }) {
               <Category categories={categories} />
               <BrandFilter brands={brands} />
               <ColorFilter colors={colors} />
+              <PriceFilter/>
             </div>
             <div className="col-span-5  p-2">
               {children}
